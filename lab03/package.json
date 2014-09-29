@@ -1,0 +1,10 @@
+{
+  "name": "lab03",
+  "description": "lab03 app",
+  "version": "0.0.1",
+  "private": true,
+  "author": "Melly Righitto",
+  "dependencies": {
+    "express": "4.9.5"
+  }
+}
