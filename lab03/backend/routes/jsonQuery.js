@@ -19,7 +19,7 @@ router.get('/', function (req, res) {
     }, function (err, data) {
         console.log(data);
         res.send(data);
-        
+        console.log(err);
     });
 
 
