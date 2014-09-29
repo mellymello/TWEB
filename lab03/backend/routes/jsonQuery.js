@@ -3,19 +3,26 @@ var router = express.Router();
 
 var gitHubApi = require("github");
 
-/* GET home page. */
-router.get('/', function(req, res) {
-    
-var github = new GitHubApi({
+
+var github = new gitHubApi({
     // required
     version: "3.0.0",
 });
-    
+
+router.get('/', function (req, res) {
+
+
+    var queryText = req.param('query');
+
     github.search.repos({
-        q:queryText
+        "q": queryText
+    }, function (err, data) {
+        console.log(data);
+        res.send(data);
+        
     });
-    
-    res.send("json query");
+
+
 });
 
 module.exports = router;
