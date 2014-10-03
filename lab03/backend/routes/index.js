@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET home page. */
 router.get('/', function(req, res) {
   //res.render('index', { title: 'WEBAPP' });
-    res.sendfile("views/backend.html");
+    res.sendFile("views/backend.html", { root: "./" });
 });
 
 module.exports = router;
