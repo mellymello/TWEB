@@ -34,7 +34,7 @@
                 e.preventDefault();
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost:3000/jsonQuery.js",
+                    url: "http://localhost:3000/jsonQuery.js?query=",
                     async: true,
                     data: $("#search").val(),
                     success: function (result) {
@@ -74,12 +74,18 @@
 
             <form class="form-search form-inline">
                 <div class="input-group">
-                    <input class="form-control search-query" placeholder="Search..." type="text" id="search"> <span class="input-group-btn">
+                    <input  class="form-control search-query" placeholder="Search..." type="text" id="search"> <span class="input-group-btn">
             <button type="submit" class="btn btn-primary" value=""> Search</button>
             </span>
                 </div>
             </form>
+            <button onclick="myFunction()">Try it</button>
 
+            <script>
+                function myFunction() {
+                    alert($("#search").val());
+                }
+            </script>
 
             <h1>Hello, world!</h1>
             <p class="lead">Welcome !!</p>
