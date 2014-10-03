@@ -32,7 +32,7 @@
                 e.preventDefault();
                 $.ajax({
                     type: "POST",
-                    url: "http://localhost:3000/jsonQuery.js?query=",
+                    url: "http://localhost:3000/jsonQuery.js",
                     async: true,
                     data: $("#search").val(),
                     success: function (result) {
