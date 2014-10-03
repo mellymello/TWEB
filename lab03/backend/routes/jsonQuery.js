@@ -17,9 +17,10 @@ router.get('/', function (req, res) {
     github.search.repos({
         "q": queryText
     }, function (err, data) {
+        console.log(err);
+        
         console.log(data);
         res.send(data);
-        console.log(err);
     });
 
 

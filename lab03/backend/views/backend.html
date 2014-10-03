@@ -8,6 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="">
+    <script src="../public/javascripts/jquery-2.1.1.js"></script>
     <title>Web App</title>
 
     <!-- Bootstrap core CSS -->
@@ -24,6 +25,25 @@
             text-align: center;
         }
     </style>
+
+
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("#search").click(function (e) {
+                e.preventDefault();
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:3000/jsonQuery.js",
+                    async: true,
+                    data: $("#search").val(),
+                    success: function (result) {
+                        alert("Envoie termine");
+                    }
+                });
+            });
+        });
+    </script>
 </head>
 
 <body>
@@ -54,19 +74,15 @@
 
             <form class="form-search form-inline">
                 <div class="input-group">
-                    <input class="form-control search-query" placeholder="Search..." type="text"> <span class="input-group-btn">
-            <button type="submit" class="btn btn-primary"> Search</button>
+                    <input class="form-control search-query" placeholder="Search..." type="text" id="search"> <span class="input-group-btn">
+            <button type="submit" class="btn btn-primary" value=""> Search</button>
             </span>
                 </div>
             </form>
 
 
-
-
-
-
             <h1>Hello, world!</h1>
-            <p class="lead">Now you can start your own project with Bootstrap 3.2.0. This plugin is a fork from <a href="https://github.com/le717/brackets-html-skeleton">HTML Skeleton</a>.</p>
+            <p class="lead">Welcome !!</p>
         </div>
     </div>
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
