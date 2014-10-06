@@ -32,7 +32,7 @@
                 e.preventDefault();
                 $.ajax({
                     type: "GET",
-                    url: "http://localhost:3000/query?q=" + $("#search").val(),
+                    url: "http://tweb-lab03.herokuapp.com/query?q=" + $("#search").val(),
                     async: true,
                     success: function (result) {
                         alert("Envoie termine");
