@@ -12,7 +12,7 @@ var github = new gitHubApi({
 router.get('/', function (req, res) {
 
 
-    var queryText = req.param('query');
+    var queryText = req.param('q');
 
     github.search.repos({
         "q": queryText

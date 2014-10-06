@@ -8,7 +8,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="">
-    <script src="../public/javascripts/jquery-2.1.1.js"></script>
+    <script src="./javascripts/jquery-2.1.1.js"></script>
     <title>Web App</title>
 
     <!-- Bootstrap core CSS -->
@@ -28,19 +28,20 @@
 
     <script>
         $(document).ready(function () {
-            $("#search").click(function (e) {
+            $("#bTryIt").click(function (e) {
                 e.preventDefault();
                 $.ajax({
-                    type: "POST",
-                    url: "http://localhost:3000/jsonQuery.js",
+                    type: "GET",
+                    url: "http://localhost:3000/query?q=" + $("#search").val(),
                     async: true,
-                    data: $("#search").val(),
                     success: function (result) {
                         alert("Envoie termine");
                     }
                 });
             });
         });
+        
+        
     </script>
 </head>
 
@@ -73,11 +74,10 @@
             <form class="form-search form-inline">
                 <div class="input-group">
                     <input  class="form-control search-query" placeholder="Search..." type="text" id="search"> <span class="input-group-btn">
-            <button type="submit" class="btn btn-primary" value=""> Search</button>
+            <button id="bTryIt" class="btn btn-primary" value=""> Search</button>
             </span>
                 </div>
             </form>
-            <button onclick="myFunction()">Try it</button>
 
             <script>
                 function myFunction() {
